@@ -1,8 +1,19 @@
 const mongoose = require('mongoose');
 require ('dotenv').config();
 
-mongoose.connect(`mongodb+srv://chatbot-user:${process.env.DB_pw}@cluster0.nrkla77.mongodb.net/?retryWrites=true&w=majority`, () => 
-console.log('Connexion à la base de données réussie !')
-);
+mongoose.set('strictQuery', false);
+
+
+mongoose.connect(`mongodb+srv://chatbot-user:aTXhO7xXHsbDvnHq@cluster0.uw53hoq.mongodb.net/?retryWrites=true&w=majority`, (err) => {
+if (err) {
+    console.log(err);
+} else {
+    console.log('Connecté !!!');
+    console.log(`${process.env.DB_PW}`)
+
+}
+}); 
+
+
 
 
